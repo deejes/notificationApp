@@ -22,11 +22,14 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayNotification(View view) {
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID);
-        builder.setSmallIcon(R.drawable.ic_launcher_background);
-        builder.setContentTitle(" ");
-        builder.setContentText("Just Remember, you are going to die one day. :)");
-        builder.setPriority(NotificationCompat.PRIORITY_DEFAULT);
+        // Create notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_launcher_background)
+            .setContentTitle(" ")
+            .setContentText("Just Remember, you are going to die one day. :)")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+
         NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
         notificationManagerCompat.notify(NOTIFICATION_ID, builder.build());
     }
